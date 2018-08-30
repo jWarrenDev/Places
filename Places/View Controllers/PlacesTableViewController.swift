@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PlaceSelectionDelegate: class {
+    func placeWasSelected(place: Place)
+}
+
 class PlacesTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
@@ -15,6 +19,17 @@ class PlacesTableViewController: UITableViewController {
         
         tableView.reloadData()
     }
+    
+    override func tableView(_ tableView : UITableView, didSelectRowAt indexPath: IndexPath){
+        guard let place = placeController?.places[indexPath.row] else {return}
+        
+        delegate?.placeWasSelected(place: place)
+    
+        
+    }
+    
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeController?.places.count ?? 0 // Don't have to unwrap place controller
@@ -29,14 +44,9 @@ class PlacesTableViewController: UITableViewController {
         cell.textLabel?.text = place?.name
         
         return cell
-        
-        
-        // Configure the cell...
-
-      
     }
     
-
+    weak var delegate: PlaceSelectionDelegate?
 
     // Catcher's mitt
     var placeController: PlaceController?

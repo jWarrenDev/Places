@@ -31,12 +31,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude from -180 to 180" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VKL-2r-ZfF">
-                                <rect key="frame" x="16" y="330" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viy-BK-kYs">
                                 <rect key="frame" x="25" y="395" width="324" height="30"/>
                                 <state key="normal" title="Save Location"/>
@@ -44,21 +38,27 @@
                                     <action selector="createNewPlace:" destination="crA-IM-g0L" eventType="touchUpInside" id="TXt-nd-nE9"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude from -180 to 180" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VKL-2r-ZfF">
+                                <rect key="frame" x="16" y="339" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="N6w-sh-40S" firstAttribute="leading" secondItem="VKL-2r-ZfF" secondAttribute="leading" id="Cgd-iT-XOV"/>
                             <constraint firstItem="wJs-Ls-PZg" firstAttribute="top" secondItem="lb3-d6-xfY" secondAttribute="top" constant="219" id="DTq-cW-v4a"/>
                             <constraint firstItem="N6w-sh-40S" firstAttribute="top" secondItem="wJs-Ls-PZg" secondAttribute="bottom" constant="15" id="HJb-W6-NWE"/>
-                            <constraint firstItem="viy-BK-kYs" firstAttribute="top" secondItem="VKL-2r-ZfF" secondAttribute="bottom" constant="35" id="PaG-sj-HBZ"/>
+                            <constraint firstItem="viy-BK-kYs" firstAttribute="top" secondItem="VKL-2r-ZfF" secondAttribute="bottom" constant="26" id="KQV-5a-TKR"/>
                             <constraint firstItem="wJs-Ls-PZg" firstAttribute="leading" secondItem="N6w-sh-40S" secondAttribute="leading" id="Qzi-qF-zCe"/>
-                            <constraint firstItem="VKL-2r-ZfF" firstAttribute="top" secondItem="N6w-sh-40S" secondAttribute="bottom" constant="16" id="Xk8-sP-bBM"/>
+                            <constraint firstItem="VKL-2r-ZfF" firstAttribute="top" secondItem="N6w-sh-40S" secondAttribute="bottom" constant="25" id="YIV-62-OQL"/>
                             <constraint firstItem="wJs-Ls-PZg" firstAttribute="trailing" secondItem="N6w-sh-40S" secondAttribute="trailing" id="aM1-zn-nSl"/>
                             <constraint firstItem="wJs-Ls-PZg" firstAttribute="leading" secondItem="jqB-QN-TiF" secondAttribute="leadingMargin" id="agm-3f-vJz"/>
+                            <constraint firstItem="VKL-2r-ZfF" firstAttribute="leading" secondItem="N6w-sh-40S" secondAttribute="leading" id="dmD-JC-FQe"/>
+                            <constraint firstItem="VKL-2r-ZfF" firstAttribute="centerX" secondItem="viy-BK-kYs" secondAttribute="centerX" id="fcU-OC-M4A"/>
                             <constraint firstItem="wJs-Ls-PZg" firstAttribute="trailing" secondItem="jqB-QN-TiF" secondAttribute="trailingMargin" id="fuI-wg-izo"/>
-                            <constraint firstItem="viy-BK-kYs" firstAttribute="centerX" secondItem="VKL-2r-ZfF" secondAttribute="centerX" id="kHH-qX-EiK"/>
                             <constraint firstItem="viy-BK-kYs" firstAttribute="leading" secondItem="lb3-d6-xfY" secondAttribute="leading" constant="25" id="vHR-Xi-jnF"/>
-                            <constraint firstItem="N6w-sh-40S" firstAttribute="trailing" secondItem="VKL-2r-ZfF" secondAttribute="trailing" id="z2J-4i-K4F"/>
+                            <constraint firstItem="VKL-2r-ZfF" firstAttribute="trailing" secondItem="N6w-sh-40S" secondAttribute="trailing" id="zKr-9V-xNa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lb3-d6-xfY"/>
                     </view>
@@ -84,7 +84,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0u-LO-53H">
                                 <rect key="frame" x="0.0" y="-11" width="375" height="329"/>
                                 <connections>
-                                    <segue destination="toa-1y-4Ox" kind="embed" id="7FK-kB-1ae"/>
+                                    <segue destination="toa-1y-4Ox" kind="embed" identifier="MapView" id="7FK-kB-1ae"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvU-WC-Pth">
